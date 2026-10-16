@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pharmacist profit margins: 2012 vs 2026 decision</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#fff;color:#2c2c2a;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-left:3px solid #378ADD;padding-left:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-left:3px solid #378ADD;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">Zawia3 &middot; Chart 4 of 7</p><p class="ttl">Pharmacist profit margins: 2012 vs 2026 decision</p><p class="sub">Up 2 points on local drugs, up 1 point on imported</p></div>
+  <div class="callout">“The new decision raised the pharmacist’s margin by two percentage points on local drugs and one point on imported ones.”</div>
+  
+<div style="position:relative;width:100%;height:clamp(200px,52vw,230px)"><canvas id="c4"></canvas></div>
+<div style="background:#f1efe8;border-radius:8px;padding:10px 13px;margin-top:10px">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a;line-height:1.6">The decision compensates pharmacists by just two percentage points, while opening the door to price increases of more than 10% on the drugs themselves.</p>
+</div>
+<script>
+(function(){
+var dk=matchMedia("(prefers-color-scheme:dark)").matches;
+var tc=dk?"#b4b2a9":"#5f5e5a",gc=dk?"rgba(255,255,255,.08)":"rgba(0,0,0,.07)";
+var blue=dk?"#85B7EB":"#378ADD",coral=dk?"#F0997B":"#D85A30";
+new Chart(document.getElementById("c4"),{type:"bar",
+  data:{
+    labels:[["Local essential","(below 500 EGP)"],["Local non-essential","(below 500 EGP)"],["Imported","(below 500 EGP)"],["Imported","(above 500 EGP)"]],
+    datasets:[
+      {label:"Decision 2012",data:[20,25,18,15],backgroundColor:blue,borderWidth:0,borderRadius:[4,4,0,0]},
+      {label:"Decision 2026",data:[22,27,19,15],backgroundColor:coral,borderWidth:0,borderRadius:[4,4,0,0]}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900,easing:"easeOutQuart"},
+  plugins:{
+    legend:{display:true,position:"bottom",labels:{color:tc,font:{size:10},boxWidth:10,padding:12}},
+    tooltip:{backgroundColor:dk?"#2c2c2a":"#fff",borderColor:dk?"rgba(255,255,255,.1)":"rgba(0,0,0,.08)",borderWidth:1,titleColor:dk?"#d3d1c7":"#2c2c2a",bodyColor:tc,padding:10,callbacks:{label:function(c){return c.dataset.label+": "+c.raw+"%";}}}},
+  scales:{x:{ticks:{color:tc,font:{size:9}},grid:{display:false},border:{color:gc}},
+    y:{min:0,max:32,ticks:{color:tc,font:{size:9},callback:function(v){return v+"%";}},grid:{color:gc},border:{display:false}}}}
+});
+})();
+</script>
+  <p class="src">Source: Decision 480 — Article 7 / Dr Ali Awf, head of pharma division, Federation of Egyptian Chambers of Commerce</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

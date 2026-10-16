@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>شرائح تسعير الدواء الأصلي الجديدة بحسب سعر المصنع</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Tajawal",sans-serif;background:#fff;color:#2c2c2a;direction:rtl;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-right:3px solid #378ADD;padding-right:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.06em;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-right:3px solid #378ADD;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;text-align:right;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">زاوية ثالثة · إنفوجرافيك ⑦ من ⑦</p><p class="ttl">شرائح تسعير الدواء الأصلي الجديدة بحسب سعر المصنع</p><p class="sub">ثلاث شرائح: أقل من 50 ألف، بين 50 ألفًا وخمسمئة ألف، وفوق خمسمئة ألف جنيه</p></div>
+  <div class="callout">"إذا وقع السعر بين خمسين ألف جنيه وخمسمئة ألف انتقل إلى التسعير القائم على القيمة، وإذا تجاوز خمسمئة ألف سُعّر بأقل سعر في دول تداوله"</div>
+  
+<div style="display:flex;flex-direction:column;gap:9px;margin-bottom:11px">
+  <div style="background:#edf7f3;border-radius:8px;padding:12px 14px;border-right:3px solid #1D9E75">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+      <span style="font-size:clamp(12px,3vw,13px);font-weight:700">أقل من 50,000 جنيه</span>
+      <span style="font-size:clamp(10px,2.5vw,11px);color:#1D9E75;font-weight:700">منخفض</span>
+    </div>
+    <p style="font-size:clamp(11px,2.8vw,12px);color:#5f5e5a;line-height:1.5">أقل سعر في الدول المرجعية الـ15</p>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#888780;margin-top:3px">المعادلة التقليدية للتسعير المقارن</p>
+  </div>
+  <div style="background:#fff4e0;border-radius:8px;padding:12px 14px;border-right:3px solid #BA7517">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+      <span style="font-size:clamp(12px,3vw,13px);font-weight:700">50,000 حتى 500,000 جنيه</span>
+      <span style="font-size:clamp(10px,2.5vw,11px);color:#BA7517;font-weight:700">متوسط</span>
+    </div>
+    <p style="font-size:clamp(11px,2.8vw,12px);color:#5f5e5a;line-height:1.5">تسعير قائم على القيمة العلاجية</p>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#888780;margin-top:3px">يستلزم دراسات اقتصادية صحية مقدمة من الشركة</p>
+  </div>
+  <div style="background:#faece7;border-radius:8px;padding:12px 14px;border-right:3px solid #D85A30">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+      <span style="font-size:clamp(12px,3vw,13px);font-weight:700">فوق 500,000 جنيه</span>
+      <span style="font-size:clamp(10px,2.5vw,11px);color:#D85A30;font-weight:700">مرتفع</span>
+    </div>
+    <p style="font-size:clamp(11px,2.8vw,12px);color:#5f5e5a;line-height:1.5">أقل سعر في دول تداوله فعليًا</p>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#888780;margin-top:3px">بلا قيد القائمة الـ15 — علاجات الأورام ونحوها</p>
+  </div>
+</div>
+  <p class="src">المصدر: قرار هيئة الدواء المصرية رقم 480 لسنة 2026 — المادة الثالثة</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

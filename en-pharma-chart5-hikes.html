@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Drug price increases in 2024: 3,000 types out of 17,000</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#fff;color:#2c2c2a;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-left:3px solid #D85A30;padding-left:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-left:3px solid #D85A30;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">Zawia3 &middot; Chart 5 of 7</p><p class="ttl">Drug price increases in 2024: 3,000 types out of 17,000</p><p class="sub">17.6% of market types raised by 30–60% in a single year</p></div>
+  <div class="callout">“Around three thousand types out of seventeen thousand had their prices raised in 2024 by between 30% and 40%, reaching as high as 60% in some cases.”</div>
+  
+<div class="cards" style="margin-bottom:12px">
+  <div class="card" style="background:#faece7;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#993C1D;margin-bottom:2px">Drug types with price hikes in 2024</p>
+    <p style="font-size:clamp(26px,7vw,34px);font-weight:800;color:#D85A30;line-height:1.1" id="n1">0</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">out of 17,000 types</p>
+  </div>
+  <div class="card" style="background:#f1efe8;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:2px">Highest recorded increase</p>
+    <p style="font-size:clamp(26px,7vw,34px);font-weight:800;color:#BA7517;line-height:1.1">60%</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">in a single year</p>
+  </div>
+</div>
+<div style="margin-bottom:10px">
+  <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a;font-weight:600">Share of market types with price increases</span>
+    <span style="font-size:clamp(10px,2.5vw,11px);font-weight:800;color:#D85A30">17.6%</span>
+  </div>
+  <div style="height:14px;background:#f1efe8;border-radius:4px;overflow:hidden">
+    <div id="pg5" style="height:100%;width:0;background:linear-gradient(90deg,#D85A30,#BA7517);border-radius:4px;transition:width 1.3s ease"></div>
+  </div>
+</div>
+<div style="background:#f1efe8;border-radius:8px;padding:10px 13px">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a;line-height:1.6">Typical increase range: between <strong>30%</strong> and <strong>40%</strong> in a single year, before the 2026 decision was issued.</p>
+</div>
+<script>
+(function(){
+  var s=null;
+  function cu(ts){
+    if(!s)s=ts;var p=Math.min((ts-s)/900,1),e=1-Math.pow(1-p,3);
+    document.getElementById("n1").textContent=Math.round(e*3000).toLocaleString();
+    if(p<1)requestAnimationFrame(cu);
+    else document.getElementById("n1").textContent="3,000";
+  }
+  setTimeout(function(){requestAnimationFrame(cu);document.getElementById("pg5").style.width="17.6%";},200);
+})();
+</script>
+  <p class="src">Source: Dr Ali Awf, head of pharma division, Federation of Egyptian Chambers of Commerce — Masrawy interview, 26 September 2026</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

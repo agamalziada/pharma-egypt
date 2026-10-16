@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Egypt’s pharmaceutical market size and growth</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#fff;color:#2c2c2a;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-left:3px solid #1D9E75;padding-left:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-left:3px solid #1D9E75;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">Zawia3 &middot; Chart 6 of 7</p><p class="ttl">Egypt’s pharmaceutical market size and growth</p><p class="sub">422 billion EGP at 25% annual growth, 4 billion packages per year</p></div>
+  <div class="callout">“The Health Minister estimates the market at around 422 billion pounds with annual growth of 25%, around four billion packages from 180 factories and 1,000 production lines.”</div>
+  
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+  <div style="background:#edf7f3;border-radius:8px;padding:10px 12px;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:2px">Market size</p>
+    <p style="font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#1D9E75;line-height:1.1" id="m1">0</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">billion EGP ($8.7B)</p>
+  </div>
+  <div style="background:#f1efe8;border-radius:8px;padding:10px 12px;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:2px">Annual growth rate</p>
+    <p style="font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#BA7517;line-height:1.1">25%</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">per year</p>
+  </div>
+  <div style="background:#f1efe8;border-radius:8px;padding:10px 12px;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:2px">Annual units sold</p>
+    <p style="font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#378ADD;line-height:1.1">4bn</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">packages</p>
+  </div>
+  <div style="background:#f1efe8;border-radius:8px;padding:10px 12px;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:2px">Q1 2026 sales</p>
+    <p style="font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#D85A30;line-height:1.1" id="m2">0</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">billion EGP (+15.9%)</p>
+  </div>
+</div>
+<div style="background:#f1efe8;border-radius:8px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center">
+  <span style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a">Factories / Production lines</span>
+  <span style="font-size:clamp(13px,3.5vw,16px);font-weight:800;color:#2c2c2a">180 factories / 1,000 lines</span>
+</div>
+<script>
+(function(){
+  var s=null;
+  function cu(ts){
+    if(!s)s=ts;var p=Math.min((ts-s)/900,1),e=1-Math.pow(1-p,3);
+    document.getElementById("m1").textContent=Math.round(e*422).toLocaleString();
+    document.getElementById("m2").textContent=(e*106.6).toFixed(1);
+    if(p<1)requestAnimationFrame(cu);
+    else{document.getElementById("m1").textContent="422";document.getElementById("m2").textContent="106.6";}
+  }
+  setTimeout(function(){requestAnimationFrame(cu);},200);
+})();
+</script>
+  <p class="src">Source: Dr Khaled Abdel Ghaffar, Minister of Health and Population / IQVIA data</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>
